@@ -43,28 +43,27 @@ Seq[Any](format.raw/*1.62*/("""
         """),_display_(/*11.10*/CSRF/*11.14*/.formField),format.raw/*11.24*/("""
 
         """),_display_(/*13.10*/inputText(productForm("name"), '_label -> "Name", 'class -> "form-control")),format.raw/*13.85*/("""
-        """),_display_(/*14.10*/select(
-            productForm("category.id"),
-            options(Category.options),
-            '_label -> "Category", '_default -> "-- Choose a category --",
-            '_showConstraints -> false, 'class -> "form-control"
-        )),format.raw/*19.10*/("""
-        """),_display_(/*20.10*/inputText(productForm("description"), '_label -> "Description", 'class -> "form-control")),format.raw/*20.99*/("""
-        """),_display_(/*21.10*/inputText(productForm("stock"), '_label -> "Stock", 'class -> "form-control")),format.raw/*21.87*/("""
-        """),_display_(/*22.10*/inputText(productForm("price"), '_label -> "Price", 'class -> "form-control")),format.raw/*22.87*/("""
+        """),_display_(/*14.10*/for((value,name) <- Category.options) yield /*14.47*/ {_display_(Seq[Any](format.raw/*14.49*/("""
+            """),format.raw/*15.13*/("""<input type="checkbox" name="catSelect[]" value""""),_display_(/*15.62*/value),format.raw/*15.67*/(""""
+            
+            />"""),_display_(/*17.16*/name),format.raw/*17.20*/("""<br>
+        """)))}),format.raw/*18.10*/("""
+        """),_display_(/*19.10*/inputText(productForm("description"), '_label -> "Description", 'class -> "form-control")),format.raw/*19.99*/("""
+        """),_display_(/*20.10*/inputText(productForm("stock"), '_label -> "Stock", 'class -> "form-control")),format.raw/*20.87*/("""
+        """),_display_(/*21.10*/inputText(productForm("price"), '_label -> "Price", 'class -> "form-control")),format.raw/*21.87*/("""
 
-        """),_display_(/*24.10*/inputText(productForm("id"), '_label -> "", 'hidden -> "hidden")),format.raw/*24.74*/("""
+        """),_display_(/*23.10*/inputText(productForm("id"), '_label -> "", 'hidden -> "hidden")),format.raw/*23.74*/("""
         
-        """),format.raw/*26.9*/("""<label>Image Upload</label>
+        """),format.raw/*25.9*/("""<label>Image Upload</label>
         <input class="btn-sm btn-default" type="file" name="upload">
         <br><br>
         <div class="actions">
             <input type="submit" value="Add/Update Product" class="btn btn-primary">
-            <a href=""""),_display_(/*31.23*/routes/*31.29*/.HomeController.index(0)),format.raw/*31.53*/("""">
+            <a href=""""),_display_(/*30.23*/routes/*30.29*/.HomeController.index(0)),format.raw/*30.53*/("""">
                 <button type="button" class="btn btn-warning">Cancel</button>
             </a>
         </div>
-    """)))}),format.raw/*35.6*/("""
+    """)))}),format.raw/*34.6*/("""
 """)))}))
       }
     }
@@ -81,11 +80,11 @@ Seq[Any](format.raw/*1.62*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Feb 27 09:31:17 GMT 2018
+                  DATE: Tue Feb 27 10:29:01 GMT 2018
                   SOURCE: /home/wdd/webapps/lab2/app/views/addProduct.scala.html
-                  HASH: 51ef8faefd96295e25fc3ea7905e7892b2f1ddb4
-                  MATRIX: 985->1|1118->63|1163->61|1190->79|1217->81|1249->105|1288->107|1319->112|1387->155|1543->303|1582->305|1619->342|1656->352|1669->356|1700->366|1738->377|1834->452|1871->462|2128->698|2165->708|2275->797|2312->807|2410->884|2447->894|2545->971|2583->982|2668->1046|2713->1064|2991->1315|3006->1321|3051->1345|3199->1463
-                  LINES: 28->1|31->2|34->1|35->3|36->4|36->4|36->4|37->5|38->6|41->9|41->9|42->10|43->11|43->11|43->11|45->13|45->13|46->14|51->19|52->20|52->20|53->21|53->21|54->22|54->22|56->24|56->24|58->26|63->31|63->31|63->31|67->35
+                  HASH: d78e1fb04ae4bedcd3155873fc16a3a83b6f9b0e
+                  MATRIX: 985->1|1118->63|1163->61|1190->79|1217->81|1249->105|1288->107|1319->112|1387->155|1543->303|1582->305|1619->342|1656->352|1669->356|1700->366|1738->377|1834->452|1871->462|1924->499|1964->501|2005->514|2081->563|2107->568|2164->598|2189->602|2234->616|2271->626|2381->715|2418->725|2516->802|2553->812|2651->889|2689->900|2774->964|2819->982|3097->1233|3112->1239|3157->1263|3305->1381
+                  LINES: 28->1|31->2|34->1|35->3|36->4|36->4|36->4|37->5|38->6|41->9|41->9|42->10|43->11|43->11|43->11|45->13|45->13|46->14|46->14|46->14|47->15|47->15|47->15|49->17|49->17|50->18|51->19|51->19|52->20|52->20|53->21|53->21|55->23|55->23|57->25|62->30|62->30|62->30|66->34
                   -- GENERATED --
               */
           

@@ -15,10 +15,16 @@ public class Category extends Model {
     @Constraints.Required
     private String name;
 
-    @OneToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Product> products;
 
     public Category() {
+    }
+    public static boolean inCategory(Long category, Long product) {
+        return find.query().where()
+        .eq("products.id", product)
+        .eq("id", category)
+        .findCount() > 0;
     }
 
     public Category(Long id, String name, List<Product> products) {

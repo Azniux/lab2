@@ -185,8 +185,12 @@ public class HomeController extends Controller {
                     FilePart<File> image = data.getFile("upload");
         
                     String saveImageMsg = saveFile(p.getId(), image);
-        
-                    flash("success", "Product " + p.getName() + " has been  updated " + saveImageMsg);
+                    if(saveImageMsg.equals("/ no file")){
+                        flash("success", "Product " + p.getName() + " has been  updated ");
+                        
+                    } else {
+                        flash("success", "Product " + p.getName() + " has been  updated " + saveImageMsg);
+                    }
                     
                     // Redirect to the index page
                     return redirect(controllers.routes.HomeController.index(0));
@@ -251,7 +255,10 @@ public class HomeController extends Controller {
                 }
                 return " and image saved";
             }
-        }
+            
+        } 
+            return "/ no file";
+        
         
     }
     public String saveFileOld(Long id, FilePart<File> uploaded) {
